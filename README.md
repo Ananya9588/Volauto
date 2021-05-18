@@ -1,5 +1,7 @@
 # VOLAUTO - Let's automate Volatility
 
+![Screenshot_20210518_142507](https://user-images.githubusercontent.com/54741372/118622571-12754080-b7e5-11eb-83d7-ad30410fbf94.png)
+
 # Prerequisite 
 
 ```
@@ -46,7 +48,3 @@ Output will be saved in the output directory for further analysis.
 19. Process Tree
 
 >Open for Suggestion you can ping me on https://www.linkedin.com/in/ananyamishra9588
-
-
-![Screenshot_20210518_142507](https://user-images.githubusercontent.com/54741372/118622571-12754080-b7e5-11eb-83d7-ad30410fbf94.png)
-
