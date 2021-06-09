@@ -23,7 +23,7 @@ def vols(filename):
     
     p = "grep -v 'Failed' "
     q = "awk '/Profile/{print $4}' "
-    
+    os.makedirs('output/{}'.format(l[0]))
     if os.path.exists('output/{}'.format(l[0])) == True:
         #print("File Does not exists")
         letters = string.ascii_lowercase
