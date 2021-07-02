@@ -23,7 +23,7 @@ def vols(filename):
     
     p = "grep -v 'Failed' "
     q = "awk '/Profile/{print $4}' "
-    os.system('mkdir output')
+    os.system('mkdir output')    
     if os.path.exists('output/{}'.format(l[0])) == True:
         #print("File Does not exists")
         letters = string.ascii_lowercase
@@ -44,12 +44,13 @@ def vols(filename):
     os.system('mkdir output/{}/dumpfiles/processdump'.format(l[0]))
     
     print(colored("......................................ImageInfo Scan is started......................",'magenta'))
-    os.system('python2 volatility/vol.py -f ' + filename + ' imageinfo'+' > '+'output/{}'.format(l[0]) + "/imageinfo_output.txt")
+    os.system('volatility/./volatility_2.6_lin64_standalone -f ' + filename + ' imageinfo'+' > '+'output/{}'.format(l[0]) + "/imageinfo_output.txt")
     os.system('grep -v "Failed" '+'output/{}'.format(l[0]) + "/imageinfo_output.txt")
     pro = os.popen(p+'output/{}'.format(l[0]) + "/imageinfo_output.txt | "+q+'output/{}'.format(l[0]) + "/imageinfo_output.txt" + " | cut -d ',' -f1").read()
     profile = pro.rstrip("\n")
     #print(type(profile))
-    cmd = 'python2 volatility/vol.py -f ' + filename + ' --profile={}'.format(profile) 
+    cmd = 'volatility/./volatility_2.6_lin64_standalone -f ' + filename + ' --profile={} '.format(profile) 
+    cmd1 = 'volatility/./volatility_2.6_lin64_standalone hashdump -f ' + filename + ' --profile={}'.format(profile) 
     #print(cmd)
     #s = os.system(q+'output/{}'.format(l[0]) + "/imageinfo_output.txt")
     print(colored("\n ----------------------------------------DONE--------------------------------------",'red'))
@@ -88,7 +89,7 @@ def vols(filename):
     print("\n")
     
     print(colored(".........................Hash Dump scan is started......................",'cyan'))
-    os.system(cmd + ' hashdump'+' > '+'output/{}'.format(l[0]) + "/hashdump_output.txt" )
+    os.system(cmd1 +' > '+'output/{}'.format(l[0]) + "/hashdump_output.txt" )
     os.system(p+'output/{}'.format(l[0]) + "/hashdump_output.txt")
     print(colored("\n ----------------------------------------DONE-----------------------------------------",'red'))
     print("\n")
