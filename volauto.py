@@ -94,8 +94,22 @@ def vols(filename):
     print(colored("\n ----------------------------------------DONE-----------------------------------------",'red'))
     print("\n")
     
-    print(colored("..........................MFT Parser is started......................",'blue'))
+    print(colored("..........................MFT Parser is started......................",'magenta'))
     os.system(cmd + ' mftparser'+ ' > '+'output/{}'.format(l[0]) + "/mftparser_output.txt" )
+    #os.system(p+'output/{}'.format(l[0]) + "/mftparser_output.txt")
+    print(colored("You can see this in the output folder",'yellow'))
+    print(colored("\n -----------------------------------------DONE-----------------------------------------",'red'))
+    print("\n")
+
+    print(colored("..........................Userassist is started......................",'blue'))
+    os.system(cmd + ' userassist'+ ' > '+'output/{}'.format(l[0]) + "/userassist_output.txt" )
+    #os.system(p+'output/{}'.format(l[0]) + "/mftparser_output.txt")
+    print(colored("You can see this in the output folder",'yellow'))
+    print(colored("\n -----------------------------------------DONE-----------------------------------------",'red'))
+    print("\n")
+
+    print(colored("..........................Hivelist is started......................",'yellow'))
+    os.system(cmd + ' hivelist'+ ' > '+'output/{}'.format(l[0]) + "/hivelist_output.txt" )
     #os.system(p+'output/{}'.format(l[0]) + "/mftparser_output.txt")
     print(colored("You can see this in the output folder",'yellow'))
     print(colored("\n -----------------------------------------DONE-----------------------------------------",'red'))
@@ -103,8 +117,8 @@ def vols(filename):
     
     print(colored("---------------------------------------------File scan is running..........................",'cyan'))
     os.system(cmd + ' filescan'+ ' > ' + 'output/{}'.format(l[0]) + "/filescan_output.txt")
-    #os.system(p+'output/{}'.format(l[0]) + "/filescan_output.txt")
-    print(colored("File Scan is Completed Shortning the results for you",'blue'))
+    os.system(p+'output/{}'.format(l[0]) + "/hivelist_output.txt")
+    #print(colored("File Scan is Completed Shortning the results for you",'blue'))
     print(colored('\n ------------------------------------Done------------------------------------------------','red'))
     print("\n")
     
