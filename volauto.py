@@ -101,6 +101,14 @@ def vols(filename):
     print(colored("\n -----------------------------------------DONE-----------------------------------------",'red'))
     print("\n")
 
+    print(colored("..........................NetScan is started......................",'yellow'))
+    os.system(cmd + ' netscan'+ ' > '+'output/{}'.format(l[0]) + "/netscan_output.txt" )
+
+    os.system(p+'output/{}'.format(l[0]) + "/netscan_output.txt")
+    #print(colored("You can see this in the output folder",'yellow'))
+    print(colored("\n -----------------------------------------DONE-----------------------------------------",'red'))
+    print("\n")
+
     print(colored("..........................Userassist is started......................",'blue'))
     os.system(cmd + ' userassist'+ ' > '+'output/{}'.format(l[0]) + "/userassist_output.txt" )
     #os.system(p+'output/{}'.format(l[0]) + "/mftparser_output.txt")
